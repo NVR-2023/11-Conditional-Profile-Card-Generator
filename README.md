@@ -1,3 +1,12 @@
+***************************************************************************************************************
+
+Exercise #11 - Conditional Profile Card generator (22-02-2023)
+  - Using the "?" ternary operator to render different HTML/CSS under certain conditions.
+Mark received:
+Date: 
+Teacher:
+
+***************************************************************************************************************
 # Conditional Profile Card
 
 Note: Make sure that you have node.js installed in your computer by typing in your terminal:
