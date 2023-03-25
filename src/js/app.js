@@ -33,14 +33,51 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>
+          <span style="color: ${
+            variables.name ? "black" : "grey"
+          }; font-style: ${variables.name ? "normal" : "italic"}">
+            ${variables.name ? variables.name : "<i>Your name</i>"}
+          </span>
+          <span style="color: ${
+            variables.lastname ? "black" : "grey"
+          }; font-style: ${variables.lastname ? "normal" : "italic"}">
+            ${
+              variables.lastname ? variables.lastname : "<i>&amp; last name</i>"
+            }
+          </span>
+        </h1>          
+        <h2 style="color: ${variables.role ? "black" : "gray"}; font-style: ${
+    variables.role ? "normal" : "italic"
+  };">
+          ${variables.role ? variables.role : "Your role"}
+        </h2>
+        <h3>
+          ${
+            variables.city
+              ? `<span style="color: black">${variables.city}</span>`
+              : `<i><span style="color: grey">Your city</span></i>`
+          }
+          ${variables.city && variables.country ? "," : ""}
+          ${
+            variables.country
+              ? `<span style="color: black">${variables.country}</span>`
+              : `<i><span style="color: grey">& country</span></i>`
+          }
+        </h3>
+      <ul class="${variables.socialMediaPosition}">
+            <li><a href="${
+              variables.twitter ? variables.twitter : "unspecified"
+            }"><i class="fab fa-twitter fa-xs"></i></a></li>
+            <li><a href="${
+              variables.github ? variables.github : "unspecified"
+            }"><i class="fab fa-github fa-xs"></i></a></li>
+            <li><a href="${
+              variables.linkedin ? variables.linkedin : "unspecified"
+            }"><i class="fab fa-linkedin fa-xs"></i></a></li>
+            <li><a href="${
+              variables.instagram ? variables.instagram : "unspecified"
+            }"><i class="fab fa-instagram fa-xs"></i></a></li>
           </ul>
         </div>
     `;
